@@ -27,7 +27,9 @@ const mcps = new MCPClient({
         "run",
         "@NexusX-MCP/telegram-mcp-server",
         "--key",
-        process.env.SMITHERY_API_KEY
+        process.env.SMITHERY_API_KEY,
+        "--profile",
+        process.env.SMITHERY_PROFILE_KEY
       ],
     },
   },
