@@ -4,7 +4,7 @@ import { MCPClient } from "@mastra/mcp";
 
 const mcps = new MCPClient({
   servers:  {
-    semantic_scholar: {
+    /*semantic_scholar: {
       command: "npx",
       type: "stdio",
       args: [
@@ -16,14 +16,27 @@ const mcps = new MCPClient({
         "--key",
         process.env.SMITHERY_API_KEY
       ],
+    },*/
+    telegram: {
+      command: "npx",
+      type: "stdio",
+      args: [
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@NexusX-MCP/telegram-mcp-server",
+        "--key",
+        process.env.SMITHERY_API_KEY
+      ],
     },
   },
 });
 
-export const paperAgent = new Agent({
-  name: 'Paper Agent',
+export const myAgent = new Agent({
+  name: 'My Agent',
   instructions: `
-      You are a helpful paper assistant that provides paper information.
+      You are a helpful assistant.
 `,
   model: openai('gpt-4o'),
   tools: await mcps.getTools(),  
