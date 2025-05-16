@@ -16,8 +16,8 @@ const mcps = new MCPClient({
         "--key",
         process.env.SMITHERY_API_KEY
       ],
-    },*/
-    telegram: {
+    }*/
+    /*telegram: {
       command: "npx",
       type: "stdio",
       args: [
@@ -31,7 +31,35 @@ const mcps = new MCPClient({
         "--profile",
         process.env.SMITHERY_PROFILE_KEY
       ],
+    },*/
+    scholar: {
+      command: "npx",
+      type: "stdio",
+      args: [
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@itsanamune/seo-mcp",
+        "--key",
+        process.env.SMITHERY_API_KEY,
+        "--profile",
+        process.env.SMITHERY_PROFILE_KEY
+      ],
     },
+    
+    /*
+    zapier: {
+      url: new URL(process.env.ZAPIER_MCP_URL)
+    },*//*
+    trello: {
+      url: new URL("https://mcp.composio.dev/composio/server/COMPOSIO_API_KEY_TRELLO"),
+    },*/
+    // https://www.mcp.run/api/mcp/sse?nonce=NONCE&username=USER&profile=PROFILE&sig=SIG
+    // https://mcp.composio.dev/gmail/
+  /*github: {
+      url: new URL("https://mcp.composio.dev/github/jealous-squeaking-accident-X82jaj"!),
+    },*/
   },
 });
 
